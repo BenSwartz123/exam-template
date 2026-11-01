@@ -3,69 +3,81 @@
 **08:00 to 17:00**: 30 min planning (NO coding) + 7.5 h coding + 1 h lunch
 **Arrive by 07:45.** Sleep well tonight.
 
-**Repo:** https://github.com/BenSwartz123/exam-template
-**GitHub username:** BenSwartz123
-**Password when git asks:** my token (saved on my phone)
-**Backup:** AGENTS.md and this file are also uploaded to Moodle.
+**GitHub repo:** https://github.com/BenSwartz123/exam-template
+**Gitea repo (backup):** my Gitea repo link
+**Password when git asks:** my token for that site (saved on my phone)
+**Backup:** AGENTS.md and this plan are also on Moodle and in my email.
 
 ---
 
-## 1. Planning time (08:00 to 08:30, NO coding, NO Qoder prompts)
-1. Do nothing for 2 minutes. Breathe.
-2. Read the brief twice. Highlight every requirement.
-3. Check the list of allowed domains. Is npm allowed? GitHub?
-   (If my stack isn't available, switch to Python + Flask + SQLite and tell Qoder.)
-4. Open Qoder and log in. Clone my repo (or download AGENTS.md from Moodle).
-5. Paste the brief at the bottom of `AGENTS.md`, under THE BRIEF.
-6. Write down the must-have features myself on paper.
+## 1. Before 08:00
+1. Log in to the computer.
+2. Open Qoder and log in.
+3. Open Gemini in Edge (if it works).
 
-## 2. Start coding (08:30)
-7. Set up git first. In the terminal (**Ctrl + `**):
-   ```bash
-   git config --global user.name "Ben Swartz"
-   git config --global user.email "my-github-email"
-   ```
-8. Ask Qoder: **"Read AGENTS.md"**
-9. Check its plan against the brief and my paper list. Fix anything wrong.
-10. Say **"go"**. It builds the skeleton.
-11. Run `./start.sh` and check that the app opens.
-12. **First push NOW:** Source Control → message → **Commit** → **Sync/Push**.
-    Sign in with GitHub, OR username `BenSwartz123` + token as the password.
+## 2. Planning time (08:00 to 08:30, NO code)
+4. Do nothing for 2 minutes. Breathe.
+5. Read the brief twice. Highlight every requirement.
+6. Check the allowed domains list. GitHub or Gitea? npm?
+   (If JavaScript isn't available, switch to Python + Flask + SQLite.)
+7. Clone my repo in Qoder, or download AGENTS.md from Moodle.
+8. Paste the brief into `AGENTS.md`, under THE BRIEF.
+9. Paste the brief into Gemini and ask:
 
-## 3. Build loop (repeat)
-13. Commit first (my undo button).
-14. Say **"next"**.
-15. Test it myself in the browser.
-16. Works → commit + push. Broken → undo and re-prompt with the exact error.
+   > List every requirement, the data model, pages/routes, and a build order of small steps. No code.
+10. Check Gemini's plan against the brief. Paste it into `AGENTS.md` under a heading `## PLAN`.
+
+## 3. Start coding (08:30)
+11. Set up git in the terminal (**Ctrl + `**):
+
+    ```
+    git config --global user.name "Ben Swartz"
+    git config --global user.email "my-email"
+    ```
+12. Tell Qoder:
+
+    > Read AGENTS.md. The plan is already written, so skip Step 1 and go.
+
+    (If Gemini didn't work, just say "Read AGENTS.md" and let Qoder plan.)
+13. Run `./start.sh` and check that the app opens.
+14. **First push NOW:** Source Control → message → **Commit** → **Sync/Push**.
+
+## 4. Build loop (repeat)
+15. Commit first (my undo button).
+16. Say **"next"**.
+17. Test it myself in the browser.
+18. Works → commit + push. Broken → undo and re-prompt with the exact error.
 
 **Every hour:**
-- [ ] Push to GitHub
-- [ ] Click through the WHOLE app from start to finish, like a real user
-- [ ] Check credits
 
-## 4. Save credits
-- Gemini / Google AI Mode for questions and errors (if they work; they might not).
+- Push
+- Click through the WHOLE app from start to finish
+- Check credits
+
+## 5. Save credits
+- Gemini for questions and errors. Qoder for building.
 - Do small fixes myself (text, colours, renames).
 - Paste the **exact** error, never just "it's broken".
 - Fails twice? Stop, rethink, or move on.
 - **Lunch check:** used more than half? Only use Qoder for big features.
 - Out of credits? I'm NOT screwed: docs + Gemini + my own code.
 
-## 5. Finish (from 16:00)
-17. **No new features.** Say **"check"** to Qoder.
-18. Test a fresh clone:
-    ```bash
+## 6. Finish (from 16:00)
+19. **No new features.** Tell Qoder **"check"**.
+20. Test a fresh clone in the terminal:
+
+    ```
     cd ..
-    git clone https://github.com/BenSwartz123/exam-template.git test
+    git clone MY-REPO-LINK test
     cd test
     ./start.sh
     ```
-19. Works? Final push **by 16:45**.
-20. Check on GitHub that my latest commit is there.
+21. Works? Final push **by 16:45**.
+22. Check online that my latest commit is there.
 
 ---
 
 **New Qoder chat?** Start with "Read AGENTS.md" again.
-**Downtime?** Click through my app and test features. Plan the next part.
+**Repo needs a specific name?** Rename it in Settings, then run: `git remote set-url origin NEW-LINK`
 
-**Remember:** a working app with fewer features beats a broken app with more. Push often. Stay calm. 💪
+**Remember:** a working app with fewer features beats a broken app with more. Push often. Stay calm.
