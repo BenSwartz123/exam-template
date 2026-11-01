@@ -16,22 +16,20 @@
    ```
 4. Open **AI Mode** in Edge (google.com → AI Mode) and keep it in a tab.
 
-## 2. Plan (about 30 min, NO AI)
-5. Read the brief twice.
-6. In `AGENTS.md`, fill in:
-   - The stack from the brief
-   - Must-have features, ranked
-   - Nice-to-haves, ranked
+## 2. Plan (about 20 min)
+5. Read the brief myself first.
+6. Paste the brief at the bottom of `AGENTS.md` (under THE BRIEF) and save.
+7. Ask Qoder: **"Read AGENTS.md"**
+8. Check its plan against the brief. Anything missing or wrong? Tell it to fix the plan.
 
 ## 3. Build
-7. Ask Qoder:
-   > Read AGENTS.md. Build the skeleton only and rewrite start.sh for this stack. Plan first.
-8. Run `./start.sh` in the terminal and check that it works.
-9. **First push (do it early!):** Source Control → message → **Commit** → **Sync/Push**.
+9. Say **"go"**. It builds the skeleton and start.sh.
+10. Run `./start.sh` in the terminal and check that it works.
+11. **First push (do it early!):** Source Control → message → **Commit** → **Sync/Push**.
    Sign in with GitHub, OR username `BenSwartz123` + token as the password.
-10. **For each feature:**
+12. **For each feature:**
     - Commit first (this is my undo button)
-    - Ask Qoder: *"Implement [feature]. Requirements: [...]. Only touch needed files. Plan first."*
+    - Say **"next"** (it builds the next step of its plan)
     - Test it myself
     - Works → commit and push. Broken → undo and re-prompt more clearly.
 
@@ -44,17 +42,19 @@
 - Out of credits? I'm NOT screwed: use AI Mode plus docs and keep going.
 
 ## 5. Finish (last hour)
-11. **No new features.**
-12. Test a fresh clone:
+13. **No new features.**
+14. Test a fresh clone:
     ```bash
     cd ..
     git clone https://github.com/BenSwartz123/exam-template.git test
     cd test
     ./start.sh
     ```
-13. Works? Final push **at least 15 min before the deadline**.
-14. Check on GitHub that my latest commit is there.
+15. Works? Final push **at least 15 min before the deadline**.
+16. Check on GitHub that my latest commit is there.
 
 ---
+
+**New Qoder chat?** Start it with "Read AGENTS.md" again.
 
 **Remember:** a working app with fewer features beats a broken app with more. Push often. Stay calm. 💪
