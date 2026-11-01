@@ -1,33 +1,62 @@
-# Project Rules for the AI Assistant
+# Master Prompt: Read This Whole File First
 
-Read this whole file before doing anything. Follow it for every request in this session.
+You are helping me build a project in a timed exam. Time and AI credits are limited. Be efficient, precise and brief.
 
-## Context
-- This is a timed exam project. Time and AI credits are limited, so be efficient and precise.
-- Submission = this single git repo. Markers will run `git clone <url>` on a fresh machine and follow the README. If it does not run from a clean clone, it fails.
-- Stack: [e.g. React + Vite frontend, Node/Express backend, SQLite]. Do not introduce other frameworks or services without asking.
-- No paid APIs, no API keys, no cloud databases. Everything must run locally.
+---
 
-## Non-negotiable deliverables (keep these working at all times)
-1. `README.md` – what the app does, prerequisites (e.g. Node version), and exact run steps.
-2. `start.sh` – one command that installs dependencies and starts everything (`chmod +x start.sh`).
-3. `.gitignore` – excludes `node_modules`, `.env`, build output, local DB files if generated.
-4. The app must start without errors after `./start.sh` on a fresh clone.
+## STEP 1: When I first say "Read AGENTS.md", do this (no code yet)
 
-## How to work
-- **Plan first.** For any new feature, reply with a short plan (files to create/change, ~5 bullets) before writing code, unless I say "just do it".
-- **Small, focused changes.** Edit only the files needed. Never rewrite a whole file when a targeted edit will do. Never delete or restructure working code unless asked.
-- **No placeholder code.** No `// TODO: implement`, no fake data unless I ask for seed data. If something can't be done, say so.
-- **Keep it simple.** Prefer the simplest working solution over clever abstractions. Minimal dependencies.
-- **After each change**, tell me in 1–3 lines: what changed, which files, and how to test it.
-- **When fixing a bug**, find the root cause first. Explain it in one sentence, then fix it. Don't guess-and-retry repeatedly — if two attempts fail, stop and tell me what you think is going on.
-- **Be brief.** No long explanations, no restating my request, no summaries of unchanged code.
-- **Don't run long-lived servers in a way that blocks you**; tell me the command and I'll run it.
+Read the brief at the bottom of this file, then reply with ONLY:
 
-## Before I commit (when I say "check")
-- Verify README and start.sh match the actual project.
-- Check for hard-coded absolute paths, missing dependencies in package files, and secrets.
-- List anything that would break on a fresh clone.
+1. **Stack:** the languages/frameworks the brief requires (or the simplest sensible choice if it doesn't say).
+2. **Must-have features:** every requirement the markers will check, ranked by importance.
+3. **Nice-to-haves:** optional extras, ranked.
+4. **Data model:** tables/objects and their fields.
+5. **Pages/routes:** one line each.
+6. **Build order:** a numbered list of small steps, starting with the skeleton.
 
-## Project spec
-[Paste the exam brief + your own short spec here at the start: features in priority order, data model, pages/routes. Core features first, nice-to-haves last.]
+Then STOP and wait for me to say "go". I may correct the plan first.
+
+## STEP 2: When I say "go"
+
+Build ONLY the skeleton:
+- Folder structure, dependencies, empty pages/routes, database/data model setup.
+- Rewrite `start.sh` so ONE command installs everything and starts the app.
+- Rewrite `README.md` with: what the app does, prerequisites, and how to run (`./start.sh`).
+- Make sure `.gitignore` excludes node_modules, .env, build output, local DB files, venv.
+Then tell me how to test it.
+
+## STEP 3: When I say "next"
+
+Build the next step from the build order. One feature at a time. Then tell me in 1–3 lines what changed and how to test it.
+
+---
+
+## Rules (always follow)
+
+**Submission requirements:**
+- Markers will `git clone` this repo on a fresh machine and follow the README. It MUST run from a clean clone with `./start.sh`.
+- No paid APIs, no API keys, no cloud services. Everything runs locally.
+- Keep README and start.sh accurate after every change.
+
+**How to work:**
+- Small, focused changes. Only edit the files needed. Never rewrite whole files when a targeted edit will do.
+- Never delete or restructure working code unless I ask.
+- No placeholder code or fake TODOs. If something can't be done, say so.
+- Keep it simple: the simplest working solution, minimal dependencies.
+- Be brief. No long explanations, no repeating my request.
+
+**When fixing bugs:**
+- Find the root cause first, explain it in one sentence, then fix only that.
+- If two attempts fail, STOP and tell me what you think is wrong. Don't keep guessing.
+
+**When I say "check":**
+- Verify README and start.sh match the project.
+- Look for hard-coded paths, missing dependencies, secrets, anything that breaks on a fresh clone.
+- List problems; fix them only if I say so.
+
+---
+
+## THE BRIEF
+
+[PASTE THE EXAM BRIEF HERE]
