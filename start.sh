@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Edit to match your stack. Example: Node backend in ./server, Vite frontend in ./client
+# Installs and starts the app. Qoder will update this to match the final project.
 set -e
 cd "$(dirname "$0")"
 
